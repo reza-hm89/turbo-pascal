@@ -1,0 +1,77 @@
+uses
+  Graph;
+var
+  Gd, Gm, i,x,y: Integer;
+begin
+  Gd := Detect;
+  InitGraph(Gd, Gm, 'c:\tpascal7\bgi');
+  cleardevice;
+  setfillstyle(1,7);
+  bar(200,100,400,300);
+  setfillstyle(1,8);
+  bar(210,110,390,135);
+  rectangle(209,109,391,136);
+  line(200,100,401,100);
+  setcolor(15);
+  line(200,302,402,302);
+  line(200,100,200,301);
+  line(402,100,402,302);
+  setcolor(8);
+  y:=5;
+  for i:=1 to 22 do
+  begin
+  rectangle(207+x,140+y,232+x,165+y);
+  line(207+x,166+y,233+x,166+y);
+  line(233+x,140+y,233+x,166+y);
+  x:=x+40;
+  if (i=5) or (i=10) or (i=14) or (i=18) then
+  begin
+  y:=y+30;
+  x:=0;
+  end;
+  end;
+  rectangle(367,205,392,245);
+  line(393,205,393,246);
+  line(367,246,393,246);
+  setcolor(red);
+  outtextxy(372,220,'AC');
+  setcolor(8);
+  rectangle(367,250,392,290);
+  line(393,250,393,291);
+  line(367,291,393,291);
+  setcolor(0);
+  outtextxy(369,268,'ESC');
+  setcolor(black);
+  outtextxy(215,153,'x!');
+  outtextxy(255,153,'û');
+  outtextxy(295,153,'^');
+  settextstyle(11,0,1);
+  outtextxy(328,153,'sin');
+  outtextxy(369,153,'cos');
+  settextstyle(12,0,1);
+  setcolor(15);
+  outtextxy(216,183,'7');
+  outtextxy(256,183,'8');
+  outtextxy(296,183,'9');
+  setcolor(0);
+  outtextxy(336,183,'*');
+  outtextxy(368,183,'tan');
+  setcolor(15);
+  outtextxy(216,213,'4');
+  outtextxy(256,213,'5');
+  outtextxy(296,213,'6');
+  setcolor(0);
+  outtextxy(336,213,'/');
+  setcolor(15);
+  outtextxy(216,243,'1');
+  outtextxy(256,243,'2');
+  outtextxy(296,243,'3');
+  outtextxy(216,273,'0');
+  setcolor(0);
+  outtextxy(336,243,'-');
+  outtextxy(256,273,'.');
+  outtextxy(296,273,'=');
+  outtextxy(336,273,'+');
+  readln;
+  CloseGraph;
+end.

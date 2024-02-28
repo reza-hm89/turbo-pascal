@@ -1,0 +1,678 @@
+uses    crt;
+var     i,n,num,s:integer;
+        avg:real;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter grade: ');
+             readln(num);
+             s:=s+num;
+        end;
+        avg:=s/n;
+        write('Average= ',avg:2:2);
+        readln
+end.
+/////////////////////////////////////
+uses    crt;
+var     a,b,t:integer;
+begin
+        clrscr;
+        write('Enter a,b: ');
+        readln(a,b);
+        while (b>0) do
+        begin
+             t:=a mod b;
+             a:=b;
+             b:=t;
+        end;
+        write(a);
+        readln
+end.
+///////////////////////////////////
+uses    crt;
+var     i,a,b,s:integer;
+begin
+        clrscr;
+        write('Enter a,b: ');
+        readln(a,b);
+        for i:=1 to b do
+             s:=s+a;
+        write('a*b= ',s);
+        readln
+end.
+//////////////////////////////////
+uses    crt;
+var     i,a,b:integer;
+begin
+        clrscr;
+        write('Enter a,b: ');
+        readln(a,b);
+        while a>=b do
+        begin
+             a:=a-b;
+             i:=i+1;
+        end;
+        write('a/b= ',i);
+        readln
+end.
+//////////////////////////////////
+uses    crt;
+var     i,j,n,s:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        j:=1;
+        for i:=1 to n do
+        begin
+             s:=s+j;
+             j:=j+2;
+        end;
+        write(n,'^2= ',s);
+        readln
+end.
+/////////////////////////////////
+uses    crt;
+var     i,n:integer;
+        s:longint;
+        sum,sum1:real;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter your salary: ');
+             readln(s);
+             if (s<=190000) then
+             begin
+                        sum:=s*0.04;
+                        sum1:=sum+s;
+             end
+             else if (s<=250000) then
+             begin
+                        sum:=s*0.055;
+                        sum1:=sum+s;
+             end
+             else
+             begin
+                        sum:=s*0.07;
+                        sum1:=sum+s;
+             end;
+        writeln('New salary: ',sum1:2:2);
+        writeln('first salary: ',s:2);
+        writeln('Extra salary: ',sum:2:2);
+        readln;
+        clrscr;
+        end;
+        readln
+end.
+///////////////////////////////////////
+uses    crt;
+var     i,j,n:byte;
+        sum,mon,s:longint;
+        name:string;
+begin
+        clrscr;
+        write('Enter your name: ');
+        readln(name);
+        write('Enter your money: ');
+        readln(mon);
+        write('Tedad morajee be bank ra vared konid: ');
+        readln(n);
+        sum:=mon;
+        for i:=1 to n do
+        begin
+                write('Enter your money: ');
+                readln(s);
+                writeln('Variz 1        bardasht 2');
+                readln(j);
+                if j=1 then
+                     sum:=s+sum
+                else if j=2 then
+                     sum:=sum-s;
+                clrscr;
+        end;
+        write('Your money: ',sum);
+        readln
+end.
+////////////////////////////////////
+uses    crt;
+var     i,j,k,z,i1,j1,n,id,age,sex,code,max,min,sum,sum1:integer;
+        name:string;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+                write('Enter your name: ');
+                readln(Name);
+                write('Enter your ID: ');
+                readln(id);
+                writeln('Code diplom   tajrobi:1  riyazi: 2   ensani:3');
+                readln(code);
+                if code=1 then
+                   j:=j+1
+                else if code=2 then
+                   k:=k+1
+                else z:=z+1;
+                write('Enter your age: ');
+                readln(age);
+                if age>max then
+                   max:=age;
+                if age<min then
+                   min:=age;
+                write('Enter your Sex:  male:1     famale:2');
+                readln(sex);
+                if sex=1 then
+                begin
+                   sum:=age+sum;
+                   i1:=i1+1;
+                end
+                else
+                begin
+                    sum1:=sum1+age;
+                    j1:=j1+1;
+                end;
+        end;
+        writeln('Tedad afrade sherkat konnadeh:');
+        writeln('Tajrobi: ',j,' riyazi:',k,' ensani:',z);
+        writeln('Youngest man: ',min);
+        writeln('Oldest man: ',max);
+        writeln('Average of sherkat konnande:');
+        write('Male: ',(sum/i1):2:2,'   famale: ',(sum1/j1):2:2);
+        readln
+
+end.
+/////////////////////////////////////////
+uses    crt;
+var     n,m,s:integer;
+begin
+        clrscr;
+        write('Enter number: ');
+        readln(n);
+        while n<>0 do
+        begin
+             m:=n;
+             s:=0;
+             while m<>0 do
+             begin
+                  s:=s*10+(m mod 10);
+                  m:=m div 10;
+             end;
+             writeln(s);
+             write('Enter number: ');
+             readln(n);
+        end;
+end.
+//////////////////////////////////////////
+uses    crt;
+var     n,m,s,sum,i,j,id,g,u:integer;
+        avg:real;
+        ans:char;
+begin
+        clrscr;
+        ans:='y';
+        while ans='y' do
+        begin
+             write('Enter your id: ');
+             readln(id);
+             write('Enter numbers of droos: ');
+             readln(n);
+             sum:=0;
+             s:=0;
+             for i:=1 to n do
+             begin
+                  write('Enter your grade and unit: ');
+                  readln(g,u);
+                  sum:=g*u+sum;
+                  s:=s+u;
+             end;
+             avg:=sum/s;
+             if avg>17 then
+                j:=j+1;
+             writeln('Average: ',avg:2:2);
+             write('Do youn want to continue:(y/n)?');
+             readln(ans);
+             clrscr;
+        end;
+        write('Numbers of students that their average is >17: ',j);
+        readln
+end.
+/////////////////////////////////////////////
+uses    crt;
+var     n,i,sign,x:integer;
+        sum,p:real;
+begin
+        clrscr;
+        sign:=1;
+        write('Enter n,x: ');
+        readln(n,x);
+        p:=x;
+        sum:=1/p;
+        for i:=2 to n do
+        begin
+             sign:=-sign;
+             p:=x*x*i+p;
+             sum:=sign*(1/p)+sum;
+        end;
+        write(sum:2:2);
+        readln
+end.
+///////////////////////////////////////////
+uses    crt;
+var     n,r,s,s1,s2,s3,s4,s5:integer;
+begin
+        clrscr;
+        write('Enter your money: ');
+        readln(n);
+        while (n>0) do
+        begin
+             r:=n mod 50;
+             s:=(n div 50)+s;
+             n:=r;
+             r:=n mod 20;
+             s1:=(n div 20)+s1;
+             n:=r;
+             r:=n mod 10;
+             s2:=(n div 10)+s2;
+             n:=r;
+             r:=n mod 5;
+             s3:=(n div 5)+s3;
+             n:=r;
+             r:=n mod 2;
+             s4:=(n div 2)+s4;
+             s5:=(n mod 2)+s5;
+             n:=0;
+        end;
+        write(s,' 50   ',s1,' 20   ',s2,' 10   ',s3,' 5   ',s4,' 2   ',s5,' 1');
+        readln
+end.
+/////////////////////////////////////////
+uses    crt;
+var     a:array [1..10] of integer;
+        i:integer;
+Begin
+        clrscr;
+        for i:=1 to 10 do
+        begin
+                write('a[',i,']: ');
+                readln(a[i]);
+        end;
+        for i:=1 to 10 do
+            write(a[i]:3);
+        readln;
+end.
+/////////////////////////////////////////
+uses    crt;
+var     a:array [1..10] of integer;
+        i,n:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+                write('a[',i,']: ');
+                readln(a[i]);
+        end;
+        for i:=n downto 1 do
+            write(a[i]:3);
+        readln;
+end.
+////////////////////////////////////////
+uses    crt;
+var     a,b:array [1..100] of integer;
+        i,j,k,n,num:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+                write('Number ',i,':');
+                readln(num);
+                if num>0 then
+                begin
+                     j:=j+1;
+                     a[j]:=num;
+                end
+                else if num<0 then
+                begin
+                     k:=k+1;
+                     b[k]:=num;
+                end;
+        end;
+        for i:=1 to j do
+            write(a[i]:5);
+        writeln;
+        for i:=1 to k do
+            write(b[i]:5);
+        readln;
+end.
+//////////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,n:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('a[',i,']:');
+             readln(a[i]);
+        end;
+        i:=1;
+        while i<=n do
+        begin
+             write(a[i]:3);
+             i:=i+2;
+        end;
+        readln;
+end.
+///////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,n,sum:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('a[',i,']:');
+             readln(a[i]);
+             sum:=sum+a[i];
+        end;
+        write('Average: ',sum/n:2:2);
+        readln;
+end.
+///////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,n,max,min:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        write('a[1]:');
+        readln(a[1]);
+        max:=a[1];
+        min:=a[1];
+        for i:=2 to n do
+        begin
+             write('a[',i,']:');
+             readln(a[i]);
+             if a[i]>max then
+                max:=a[i];
+             if a[i]<min then
+                min:=a[i];
+        end;
+        writeln('Max: ',max);
+        writeln('Min: ',min);
+        readln;
+end.
+//////////////////////////////////
+uses    crt;
+var     a:array [0..9] of integer;
+        i,r:integer;
+        n:longint;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        while n>0 do
+        begin
+                r:=n mod 10;
+                a[r]:=a[r]+1;
+                n:=n div 10;
+        end;
+        for i:=0 to 9 do
+                writeln('a[',i,']: ',a[i]);
+        readln;
+end.
+/////////////////////////////////
+uses    crt;
+var     a,b:array [0..100] of integer;
+        i,n:integer;
+Begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+                write('Enter number ',i,': ');
+                readln(a[i]);
+        end;
+        for i:=1 to 100 do
+             b[a[i]]:=b[a[i]]+1;
+        for i:=1 to 100 do
+            write('    b[',i,']: ',b[i]:4);
+        readln;
+end.
+///////////////////////////////////
+uses    crt;
+var     i,k,n:integer;
+        a:array [0..100] of integer;
+begin
+        clrscr;
+        write('Enter number: ');
+        readln(n);
+        while n>0 do
+        begin
+             k:=k+1;
+             a[k]:=n mod 2;
+             n:=n div 2;
+        end;
+        for i:=k downto 1 do
+            write(a[i]);
+        readln
+end.
+///////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,n,id,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter ID: ');
+             readln(a[i]);
+        end;
+        write('Enter Your ID: ');
+        readln(id);
+        for i:=1 to n do
+             if id=a[i] then
+                  index:=i;
+        if index<>0 then
+           write('Yes ,in', index,' location')
+        else
+            write('Not found');
+        readln
+end.
+/////////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,j,n,num,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        write('Enter Your Number: ');
+        readln(num);
+        for i:=1 to n do
+             if num=a[i] then
+                  j:=j+1;
+        if j<>0 then
+           write(j,' Times repeated')
+        else
+           write('Not found');
+        readln
+end.
+////////////////////////////////////
+uses    crt;
+var     a,b:array [1..100] of integer;
+        i,j,n:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        for i:=n downto 1 do
+        begin
+             j:=j+1;
+             b[j]:=a[i];
+        end;
+        write('a[',n,']: ');
+        for i:=1 to n do
+             write(a[i]:3);
+        writeln;
+        write('b[',n,']: ');
+        for i:=1 to n do
+            write(b[i]:3);
+        readln
+end.
+////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100] of integer;
+        i,j,n:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        writeln('a[',n,']:');
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        writeln('b[',n,']');
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(b[i]);
+        end;
+        for i:=1 to n do
+            c[i]:=a[i]+b[i];
+        write('c[',n,']:');
+        for i:=1 to n do
+            write(c[i]:3);
+        readln
+end.
+///////////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,j,k,n,num,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        write('Enter your number: ');
+        readln(num);
+        for i:=1 to n do
+        begin
+             if a[i]=num then
+             begin
+                  index:=1;
+                  k:=k+1;
+                  for j:=i to n-1 do
+                      a[j]:=a[j+1];
+             end;
+        end;
+        if index<>0 then
+        for i:=1 to n-k do
+            write(a[i]:3)
+        else write('Not found');
+        readln
+end.
+////////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,n,num:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter ID ',i,'(1-15): ');
+             readln(num);
+             a[num]:=a[num]+1;
+        end;
+        for i:=1 to 15 do
+            writeln('a[',i,']: ',a[i]);
+        readln
+end.
+//////////////////////////////////
+uses    crt;
+var     a,b:array [1..100] of integer;
+        i,j,k,n,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        b[1]:=a[1];
+        k:=1;
+        for i:=2 to n do
+        begin
+             index:=0;
+             for j:=1 to i do
+                 if a[i]=b[j] then
+                    index:=1;
+             if index=0 then
+             begin
+                     k:=k+1;
+                     b[k]:=a[i];
+             end;
+        end;
+        for i:=1 to k do
+            write(b[i]:3);
+        readln
+end.
+//////////////////////////////////
+uses    crt;
+var     a:array [1..100] of integer;
+        i,j,n:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,': ');
+             readln(a[i]);
+        end;
+        for i:=1 to n do
+        begin
+            for j:=1 to a[i] do
+                write(a[i]:3);
+            writeln;
+        end;
+        readln
+end.

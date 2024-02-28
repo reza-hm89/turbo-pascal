@@ -1,0 +1,549 @@
+uses    crt;
+var     i,j,n,index,find,cntr,k:byte;
+        a:array [1..20] of integer;
+Begin
+        clrscr;
+        textcolor(15);
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter number ',i,' : ');
+             readln(a[i]);
+        end;
+        for i:=1 to n do
+        begin
+            index:=a[i];
+            k:=0;
+            for j:=1 to n do
+                if a[j]=index then
+                   k:=k+1;
+                if k>cntr then
+                begin
+                        find:=index;
+                        cntr:=k;
+                end;
+        end;
+        write('Number ',find,' has been repeated ',cntr,' times');
+        readln;
+end.
+///////////////////////////////////////////
+uses    crt;
+var     i,j,k,code:integer;
+        a,b:array [1..100] of longint;
+        mon,sh:longint;
+        ans:char;
+begin
+        clrscr;
+        ans:='y';
+        while ans='y' do
+        begin
+             write('Enter shomare hesab: ');
+             readln(sh);
+             write('Enter mojoodi hesab: ');
+             readln(mon);
+             write('Enter      1:jari     2:pas andaz    : ');
+             readln(code);
+             if code=1 then
+             begin
+                  i:=i+1;
+                  a[i]:=mon;
+             end
+             else if code=2 then
+             begin
+                  j:=j+1;
+                  b[j]:=mon;
+             end;
+             write('Do you want to continue(y/n): ');
+             readln(ans);
+             clrscr;
+        end;
+        clrscr;
+        writeln('Hesabhaye Jari:');
+        for k:=1 to i do
+            write(a[i]:10);
+        writeln;
+        writeln('Hesabhaye pasandaz:');
+        for k:=1 to j do
+            write(b[j]:10);
+        readln
+end.
+////////////////////////////////////////////
+uses    crt;
+var     i,n,code:integer;
+        a,b:array [1..100] of longint;
+        gh:longint;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+             write('Enter code azmayesh: ');
+             readln(code);
+             write('Enter gheymate azmayesh: ');
+             readln(gh);
+             a[i]:=code;
+             b[i]:=gh;
+        end;
+        write('Enter your code: ');
+        readln(code);
+        for i:=1 to n do
+            if code=a[i] then
+               write('gheymat: ',b[i]);
+        readln
+end.
+/////////////////////////////////////////
+uses    crt;
+var     i,n,num,index:integer;
+        a:array [1..100] of longint;
+        gh:longint;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            readln(a[i]);
+        write('Enter your number: ');
+        readln(num);
+        for i:=1 to n do
+            if (a[i]=num) then
+               index:=1;
+        if index=0 then
+        begin
+             n:=n+1;
+           a[n]:=num;
+        end
+        else
+            writeln('Adad tekrari bod!');
+        for i:=1 to n do
+            write(a[i]:3);
+        readln
+end.
+/////////////////////////////////////////
+uses    crt;
+var     i,j,k,n,num,index:integer;
+        a:array [1..100] of longint;
+        gh:longint;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        write('Enter number: ');
+        readln(a[1]);
+        for i:=2 to n do
+        begin
+             repeat
+                   write('Enter number: ');
+                   readln(num);
+             until a[i-1]<num;
+             a[i]:=num;
+        end;
+        write('Enter number: ');
+        readln(num);
+        for i:=1 to n do
+            if a[i]=num then
+                 index:=1;
+        if index=0 then
+        begin
+             for i:=1 to n do
+                  if a[i]>num then
+                  begin
+                       k:=i;
+                       for j:=n+1 downto i do
+                           a[j]:=a[j-1];
+                       a[k]:=num;
+                       i:=n;
+                  end;
+        for i:=1 to n+1 do
+            write(a[i]:3);
+        end;
+        readln
+end.
+//////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100] of integer;
+        i,j,n,m,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            readln(a[i]);
+        for i:=1 to n do
+            c[i]:=a[i];
+        write('Enter m: ');
+        readln(m);
+        for i:=1 to m do
+            readln(b[i]);
+        for i:=1 to n do
+        begin
+             index:=0;
+             for j:=1 to n do
+                 if a[j]=b[i] then
+                    index:=1;
+             if index=0 then
+             begin
+                      n:=n+1;
+                      c[n]:=b[i];
+             end;
+        end;
+        for i:=1 to n do
+            write(c[i]:3);
+        readln
+end.
+///////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100] of integer;
+        i,j,k,n,m,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            readln(a[i]);
+        write('Enter m: ');
+        readln(m);
+        for i:=1 to m do
+            readln(b[i]);
+        i:=1;
+        while (i<=m) or (i<=n) do
+        begin
+                index:=0;
+                for j:=1 to n do{n or m}
+                    if a[j]=b[i] then
+                       index:=1;
+                if index=1 then
+                begin
+                     k:=k+1;
+                     c[k]:=b[i];
+                end;
+                i:=i+1;
+        end;
+        for i:=1 to k do
+            write(c[i]:3);
+        readln
+end.
+////////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100] of integer;
+        i,j,k,n,m,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            readln(a[i]);
+        write('Enter m: ');
+        readln(m);
+        for i:=1 to m do
+            readln(b[i]);
+        i:=1;
+        while (i<=n) do
+        begin
+                index:=0;
+                for j:=1 to n do
+                    if b[j]=a[i] then
+                       index:=1;
+                if index=0 then
+                begin
+                     k:=k+1;
+                     c[k]:=a[i];
+                end;
+                i:=i+1;
+        end;
+        for i:=1 to k do
+            write(c[i]:3);
+        readln
+end.
+////////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100] of integer;
+        i,j,n,m,k,t:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            readln(a[i]);
+        write('Enter m: ');
+        readln(m);
+        for i:=1 to m do
+            readln(b[i]);
+        i:=1;
+        j:=1;
+        while (i<=n) and (j<=m) do
+        begin
+             if a[i]<b[j] then
+             begin
+                  k:=k+1;
+                  c[k]:=a[i];
+                  i:=i+1;
+             end
+             else if b[j]<a[i] then
+             begin
+                  k:=k+1;
+                  c[k]:=b[j];
+                  j:=j+1;
+             end
+             else
+             begin
+                  k:=k+1;
+                  c[k]:=a[i];
+                  i:=i+1;
+                  j:=j+1;
+             end;
+        end;
+        for t:=i to n do
+        begin
+             k:=k+1;
+             c[k]:=a[t];
+        end;
+        for t:=j to m do
+        begin
+             k:=k+1;
+             c[k]:=b[t];
+        end;
+        for i:=1 to k do
+            write(c[i]:3);
+        readln
+end.
+////////////////////////////////////
+uses    crt;
+var     a:array [1..3,1..4] of integer;
+        i,j:integer;
+begin
+        clrscr;
+        for i:=1 to 3 do
+            for j:=1 to 4 do
+                readln(a[i,j]);
+        for i:=1 to 3 do
+        begin
+            for j:=1 to 4 do
+                write(a[i][j]:3);
+            writeln;
+        end;
+        readln;
+end.
+////////////////////////////////////
+uses    crt;
+var     a:array [1..10,1..10] of integer;
+        i,j,i1,j1,max:integer;
+begin
+        clrscr;
+        for i:=1 to 5 do
+            for j:=1 to 4 do
+            begin
+                write('a[',i,',',j,']:');
+                readln(a[i,j]);
+            end;
+        for i:=1 to 5 do
+        begin
+            for j:=1 to 4 do
+                if a[i][j]>max then
+                begin
+                     max:=a[i][j];
+                     i1:=i;
+                     j1:=j;
+                end;
+        end;
+            writeln('Max= ',max,' in ',i1,',',j1);
+        readln;
+end.
+/////////////////////////////////////
+uses    crt;
+var     a:array [1..10,1..10] of integer;
+        i,j,j1,n,max:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            for j:=1 to n do
+            begin
+                write('a[',i,',',j,']:');
+                readln(a[i,j]);
+            end;
+        for i:=1 to n do
+        begin
+            max:=a[i][1];
+            for j:=1 to n do
+                if a[i][j]>max then
+                begin
+                     max:=a[i][j];
+                     j1:=j;
+                end;
+                writeln('max',i,': ',max,'in ',j1);
+        end;
+        readln;
+end.
+//////////////////////////////////////////
+uses    crt;
+var     a:array [1..10,1..10] of integer;
+        i,j,j1,n,max:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            for j:=1 to n do
+            begin
+                write('a[',i,',',j,']:');
+                readln(a[i,j]);
+            end;
+        for i:=1 to n do
+        begin
+            max:=a[1][i];
+            for j:=1 to n do
+                if a[j][i]>max then
+                begin
+                     max:=a[j][i];
+                     j1:=i;
+                end;
+                writeln('max',i,': ',max,'in ',j1);
+        end;
+        readln;
+end.
+//////////////////////////////////////////
+uses    crt;
+var
+        i,j,n:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+        begin
+            for j:=1 to n do
+                write(i*j:5);
+            writeln;
+        end;
+        readln;
+end.
+//////////////////////////////////////////
+uses    crt;
+var     a:array [1..100,1..100] of integer;
+        i,j,n,s:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            for j:=1 to n do
+            begin
+                write('a[',i,',',j,']:');
+                readln(a[i,j]);
+            end;
+        for i:=1 to n do
+            for j:=1 to n do
+                if i=j then
+                   s:=a[i,j]+s;
+        write('sum of ghotre asli: ',s);
+        readln;
+end.
+//////////////////////////////////////////
+uses    crt;
+var     a,b:array [1..100,1..100] of integer;
+        i,j,n,t:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            for j:=1 to n do
+                readln(a[i,j]);
+        for i:=1 to n do
+        begin
+            for j:=1 to n do
+                b[i,j]:=a[j,i];
+        end;
+        for i:=1 to n do
+            for j:=1 to n do
+                write(b[i,j]:4);
+        readln
+end.
+//////////////////////////////////////////
+uses    crt;
+var     a:array [1..100,1..100] of integer;
+        i,j,n,index:integer;
+begin
+        clrscr;
+        write('Enter n: ');
+        readln(n);
+        for i:=1 to n do
+            for j:=1 to n do
+                readln(a[i,j]);
+        for i:=1 to n do
+        begin
+            for j:=1 to n do
+                if (i<j) and (a[i,j]<>0) then
+                   index:=1;
+        end;
+        if index=0 then
+        write('Matrix paein mosalasi ast')
+        else
+        write('Matrix paein mosalasi nist');
+        readln
+end.
+//////////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100,1..100] of integer;
+        i,j,n,m:integer;
+begin
+        clrscr;
+        write('Enter n,m: ');
+        readln(n,m);
+        writeln('Matrix A:');
+        for i:=1 to n do
+            for j:=1 to m do
+                readln(a[i,j]);
+        clrscr;
+        writeln('Matrix B:');
+        for i:=1 to n do
+            for j:=1 to m do
+                readln(b[i,j]);
+        for i:=1 to n do
+            for j:=1 to m do
+                c[i,j]:=a[i,j]+b[i,j];
+        clrscr;
+        writeln('Matrix C:');
+        for i:=1 to n do
+        begin
+            for j:=1 to m do
+                write(c[i,j]:4);
+            writeln;
+        end;
+        readln
+end.
+/////////////////////////////////////////
+uses    crt;
+var     a,b,c:array [1..100,1..100] of integer;
+        i,j,t,n,m,k,z:integer;
+begin
+        clrscr;
+        write('Enter n,m,k,z: ');
+        readln(n,m,k,z);
+        writeln('Matrix A:');
+        for i:=1 to n do
+            for j:=1 to m do
+                readln(a[i,j]);
+        clrscr;
+        writeln('Matrix B:');
+        for i:=1 to k do
+            for j:=1 to z do
+                readln(b[i,j]);
+        for i:=1 to n do
+        begin
+            for j:=1 to z do
+                for t:=1 to m do
+                    c[i,j]:=a[i,t]*b[t,j]+c[i,j];
+        end;
+        for i:=1 to n do
+        begin
+            for j:=1 to z do
+                write(c[i,j]:3);
+            writeln;
+        end;
+        readln
+end.
+////////////////////////////////////////
